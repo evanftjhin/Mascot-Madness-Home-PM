@@ -24,19 +24,19 @@ var torso: some BodyPart {
                             .fill(.white)
                         Circle()
                             .fill(.red)
-                            .offset(x: 14, y: 12)
+                            .offset(x: 30, y: 25)
                     }
-                    .frame(width: 200, height: 200)
+                    .frame(width: 400, height: 200)
                     .rotationEffect(.degrees(-40))
-                    .position(x: width * 0.38, y: height * 0.22)
+                    .position(x: width * 0.4, y: height * 0.22)
 
                     ForEach(0..<5) { index in
                         let angle = Double(index) * 72 - 90
                         let radians = angle * .pi / 180
                         Image(systemName: "star.fill")
-                            .font(.system(size: 24))
+                            .font(.system(size:50))
                             .foregroundStyle(.white)
-                            .position(x: width * 0.43 + 50 + 100 * cos(radians),
+                            .position(x: width * 0.5 + 50 + 100 * cos(radians),
                                       y: height * 0.22 + 100 * sin(radians))
                     }
                 }
