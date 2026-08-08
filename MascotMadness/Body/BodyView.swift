@@ -19,23 +19,25 @@ var torso: some BodyPart {
                                 .frame(maxHeight: .infinity, alignment: .top)
                         }
 
-                    Circle()
-                        .fill(.white)
-                        .frame(width: 46, height: 46)
-                        .position(x: width * 0.38, y: height * 0.22)
-
-                    Circle()
-                        .fill(.red)
-                        .frame(width: 46, height: 46)
-                        .position(x: width * 0.38 + 14, y: height * 0.22 + 12)
+                    ZStack {
+                        Circle()
+                            .fill(.white)
+                        Circle()
+                            .fill(.red)
+                            .offset(x: 14, y: 12)
+                    }
+                    .frame(width: 200, height: 200)
+                    .rotationEffect(.degrees(-40))
+                    .position(x: width * 0.38, y: height * 0.22)
 
                     ForEach(0..<5) { index in
-                        let angle = Double(index) * 2 * Double.pi / 5 - Double.pi / 2
+                        let angle = Double(index) * 72 - 90
+                        let radians = angle * .pi / 180
                         Image(systemName: "star.fill")
-                            .font(.system(size: 14))
+                            .font(.system(size: 24))
                             .foregroundStyle(.white)
-                            .position(x: width * 0.58 + width * 0.13 * cos(angle),
-                                      y: height * 0.24 + height * 0.10 * sin(angle))
+                            .position(x: width * 0.43 + 50 + 100 * cos(radians),
+                                      y: height * 0.22 + 100 * sin(radians))
                     }
                 }
             }
