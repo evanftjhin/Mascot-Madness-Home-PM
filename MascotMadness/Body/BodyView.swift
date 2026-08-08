@@ -26,7 +26,7 @@ var torso: some BodyPart {
                             .fill(.red)
                             .offset(x: 30, y: 25)
                     }
-                    .frame(width: 400, height: 200)
+                    .frame(width: 700, height: 200)
                     .rotationEffect(.degrees(-40))
                     .position(x: width * 0.4, y: height * 0.22)
 
